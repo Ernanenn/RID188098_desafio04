@@ -1,3 +1,4 @@
+// Lista com os principais canais sociais exibidos no rodapé.
 const socials = [
   {
     id: 'facebook',

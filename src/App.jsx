@@ -9,8 +9,11 @@ import apiTestSuiteImg from './assets/apitest.jpeg'
 import pontoEletronicoImg from './assets/pontosis.jpeg'
 import showsabImg from './assets/showsab.jpeg'
 
+// Identificador utilizado para persistir a escolha de tema no localStorage.
 const THEME_STORAGE_KEY = 'portfolio-theme'
 
+// Determina o tema inicial, priorizando a preferência salva pelo usuário
+// e, caso não exista, consulta a preferência do sistema operacional.
 const getInitialTheme = () => {
   if (typeof window === 'undefined') return 'light'
   const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
@@ -23,6 +26,7 @@ const getInitialTheme = () => {
   return 'light'
 }
 
+// Conteúdo exibido no carrossel da seção de blog.
 const blogPosts = [
   {
     id: 1,
@@ -31,33 +35,34 @@ const blogPosts = [
     tags: ['WebDev', 'Performance', 'Wasm'],
     excerpt:
       'Descubra por que o Wasm é uma realidade para rodar código de alta performance (C++, Rust) diretamente no seu browser, redefinindo o futuro das aplicações web.',
-},
-{
-  id: 2,
-  title: 'Seu Primeiro Modelo de ML: Um Guia Simples para Desenvolvedores',
-  date: '28 Out 2025',
-  tags: ['AI', 'Machine Learning', 'Python'],
-  excerpt:
-    'Aprenda os conceitos básicos de Machine Learning e como integrar seu primeiro modelo em uma aplicação web, transformando dados em decisões inteligentes, mesmo sem ser um cientista de dados.',
-},
-{
-  id: 3,
-  title: 'Como Usar o React Hook Form para Validar Formulários de Forma Simples e Eficiente',
-  date: '15 Set 2025',
-  tags: ['React', 'Formulários', 'Validade'],
-  excerpt:
-    'Aprenda a usar o React Hook Form para criar formulários robustos e validados de forma eficiente, transformando entradas de usuários em dados estruturados e seguros.',
-},
-{
-  id: 4,
-  title: 'Terraform vs. Pulumi: Qual Ferramenta de IaC Escolher em 2025?',
-  date: '05 Dez 2025',
-  tags: ['DevOps', 'Cloud', 'IaC', 'Terraform'],
-  excerpt:
-    'Uma análise detalhada das principais ferramentas de Infraestrutura como Código (IaC) do mercado. Comparamos as abordagens declarativa e imperativa para te ajudar a escolher a solução ideal para gerenciar seus recursos na nuvem.',
-},
+  },
+  {
+    id: 2,
+    title: 'Seu Primeiro Modelo de ML: Um Guia Simples para Desenvolvedores',
+    date: '28 Out 2025',
+    tags: ['AI', 'Machine Learning', 'Python'],
+    excerpt:
+      'Aprenda os conceitos básicos de Machine Learning e como integrar seu primeiro modelo em uma aplicação web, transformando dados em decisões inteligentes, mesmo sem ser um cientista de dados.',
+  },
+  {
+    id: 3,
+    title: 'Como Usar o React Hook Form para Validar Formulários de Forma Simples e Eficiente',
+    date: '15 Set 2025',
+    tags: ['React', 'Formulários', 'Validade'],
+    excerpt:
+      'Aprenda a usar o React Hook Form para criar formulários robustos e validados de forma eficiente, transformando entradas de usuários em dados estruturados e seguros.',
+  },
+  {
+    id: 4,
+    title: 'Terraform vs. Pulumi: Qual Ferramenta de IaC Escolher em 2025?',
+    date: '05 Dez 2025',
+    tags: ['DevOps', 'Cloud', 'IaC', 'Terraform'],
+    excerpt:
+      'Uma análise detalhada das principais ferramentas de Infraestrutura como Código (IaC) do mercado. Comparamos as abordagens declarativa e imperativa para te ajudar a escolher a solução ideal para gerenciar seus recursos na nuvem.',
+  },
 ]
 
+// Portfólio de projetos destacados no site.
 const projects = [
   {
     id: 1,
@@ -86,13 +91,16 @@ const projects = [
 ]
 
 function App() {
+  // Estado responsável pelo tema atual da interface (light/dark).
   const [theme, setTheme] = useState(getInitialTheme)
 
+  // Mantém o atributo data-theme sincronizado e persiste a escolha do usuário.
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
     window.localStorage.setItem(THEME_STORAGE_KEY, theme)
   }, [theme])
 
+  // Alterna entre os dois temas disponíveis.
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
   }

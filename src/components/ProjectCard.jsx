@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 const ProjectCard = ({ title, thumbnail, description }) => {
+  // Controla a exibição do modal com a imagem ampliada do projeto.
   const [isOpen, setIsOpen] = useState(false)
 
   return (

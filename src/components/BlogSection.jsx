@@ -9,6 +9,7 @@ const BlogSection = ({ posts = [] }) => {
   const measureRef = useRef(null)
   const totalPosts = posts.length
 
+  // Ajusta dinamicamente os cards exibidos para o carrossel.
   const currentSlide = useMemo(() => {
     if (!totalPosts) return []
     if (totalPosts <= 2) return posts
@@ -16,6 +17,7 @@ const BlogSection = ({ posts = [] }) => {
     return [posts[currentIndex], posts[nextIndex]]
   }, [currentIndex, posts, totalPosts])
 
+  // Avança automaticamente o carrossel a cada intervalo configurado.
   useEffect(() => {
     if (totalPosts <= 1) return undefined
     const intervalId = window.setInterval(() => {
@@ -25,6 +27,7 @@ const BlogSection = ({ posts = [] }) => {
     return () => window.clearInterval(intervalId)
   }, [totalPosts])
 
+  // Mantém a altura mínima dos cards consistente em todas as telas.
   useEffect(() => {
     const measureEl = measureRef.current
     if (!measureEl) return
@@ -52,6 +55,7 @@ const BlogSection = ({ posts = [] }) => {
     }
   }, [posts])
 
+  // Botões de navegação manual do carrossel.
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + totalPosts) % totalPosts)
   }

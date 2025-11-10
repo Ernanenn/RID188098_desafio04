@@ -1,3 +1,4 @@
+// Cartão individual utilizado dentro do carrossel de artigos.
 const BlogCard = ({ title, date, tags, excerpt }) => {
   return (
     <article className="blog-card">

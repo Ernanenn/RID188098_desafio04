@@ -1,39 +1,37 @@
-# Portfólio – Template 03 (Figma)
+# Portfólio Profissional
 
-Este projeto é um portfólio profissional desenvolvido com **React** e **Vite**, seguindo fielmente o **Template 03** disponibilizado no Figma para o desafio da Escola DNC. Toda a estrutura, hierarquia visual e componentes foram construídos com base nesse layout, garantindo consistência com o design original.
+Portfólio profissional construído em **React + Vite**, seguindo o Template 03 do Figma, proposto no desafio da Escola DNC. O projeto traz uma landing page moderna, com carrossel de artigos, seção de projetos e alternância de tema (claro/escuro), mantendo fidelidade ao layout original.
 
-## Tecnologias
+## ✨ Principais funcionalidades
 
-- [React](https://react.dev/) + [Vite](https://vite.dev/) para velocidade de desenvolvimento e HMR.
-- Hooks nativos (`useState`, `useEffect`) para adicionar dinamismo e personalização.
-- CSS puro para reproduzir a identidade visual do template.
+- **Alternância de tema** (light/dark) persistida em `localStorage`.
+- **Carrossel de artigos** com autoplay, indicadores e controle responsivo.
+- **Modal de imagens** nos cards de projeto.
+- **Navbar dinâmica** com sombra ao rolar e âncoras para as seções.
+- Layout responsivo para desktop, tablet e mobile.
 
-## Hooks utilizados
+## 🛠️ Tecnologias
 
-- `useState`: controla a navegação do carrossel de posts, o estado elevado da navbar ao rolar a página e a abertura do modal de imagens nos projetos.
-- `useEffect`: gerencia o temporizador automático do carrossel e o listener de scroll utilizado para aplicar sombra na navbar.
+- [React](https://react.dev/) + [Vite](https://vite.dev/)  
+- Hooks nativos (`useState`, `useEffect`, `useMemo`, `useRef`)  
+- CSS modularizado com variáveis de tema e media queries  
+- Persistência de tema em `localStorage`
 
-## Executando o projeto
+## 📂 Estrutura
+
+- `src/App.jsx` – coordena o tema, injeta dados e renderiza as seções.
+- `src/components/` – blocos de UI (Hero, Navbar, Blog, Projetos, Footer, etc.).
+- `src/App.css` – estilos globais organizados por seções mais ajustes responsivos.
+- `src/index.css` – reset, variáveis de cores (light/dark) e definições base.
+
+## ⚙️ Executando o projeto
 
 ```bash
-# Instalar dependências
+# Instale as dependências
 npm install
 
-# Rodar em desenvolvimento
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-O servidor padrão do Vite estará disponível em `http://localhost:5173`.
-
-## Estrutura principal
-
-- `src/components`: componentes modulares que refletem os blocos do Template 03 (Hero, Blog, Projetos e Footer).
-- `src/App.jsx`: orquestra os componentes, injeta dados estáticos e aplica os hooks.
-- `src/App.css` e `src/index.css`: estilos alinhados às cores, tipografia e espaçamentos do Template 03.
-
-## Status do projeto
-
-✅ Layout e conteúdo adaptados do Template 03  
-✅ Configuração com React + Vite  
-✅ Hooks implementados (`useState` + `useEffect`)  
-✅ Responsividade básica mantendo a essência do design
+O projeto roda por padrão em `http://localhost:5173`.

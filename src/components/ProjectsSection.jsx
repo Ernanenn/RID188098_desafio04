@@ -1,5 +1,6 @@
 import ProjectCard from './ProjectCard'
 
+// Agrupa o portfólio de projetos, exibindo cada item com descrição e miniatura.
 const ProjectsSection = ({ projects }) => {
   return (
     <section id="projects" className="projects">

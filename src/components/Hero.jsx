@@ -1,3 +1,4 @@
+// Seção de destaque com apresentação profissional e CTA para download do currículo.
 const Hero = ({ greeting }) => {
   return (
     <section className="hero">

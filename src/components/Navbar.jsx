@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const Navbar = ({ theme = 'light', onToggleTheme }) => {
   const [isElevated, setIsElevated] = useState(false)
 
+  // Aplica uma sombra na barra de navegação assim que o usuário começa a rolar a página.
   useEffect(() => {
     const handleScroll = () => {
       setIsElevated(window.scrollY > 40)
