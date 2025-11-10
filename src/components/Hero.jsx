@@ -10,8 +10,7 @@ const Hero = ({ greeting }) => {
       <p>
         Desenvolvedor especializado em traduzir visões de negócio em
         produtos digitais robustos e escaláveis. Ajudo empresas a validar
-        rapidamente MVPs e garantir o lançamento de produtos com eficiência e
-        escala.
+        rapidamente MVPs e garantir o lançamento de produtos com eficiência.
       </p>
       <a
         className="hero__button"
@@ -19,7 +18,7 @@ const Hero = ({ greeting }) => {
         target="_blank"
         rel="noreferrer"
       >
-        Download resume
+        Download resumo
       </a>
     </section>
   )

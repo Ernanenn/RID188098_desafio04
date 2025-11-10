@@ -1,7 +1,7 @@
 .app {
-  max-width: 1152px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 48px 0 96px;
+  padding: 24px 0 96px;
 }
 
 .app main {
@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: center;
   height: 43px;
-  color: #000000;
+  color: #21243d;
   transition: color 0.2s ease;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .navbar__links a:hover {
-  color: #2563eb;
+  color: #21243d;
 }
 
 .navbar--elevated {
@@ -73,19 +73,19 @@
   font-size: 0.875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #21243d;
 }
 
 .hero h1 {
   width: 506px;
-  min-height: 105px;
+  min-height: 100px;
   font-family: 'Heebo', sans-serif;
-  font-weight: 700;
-  font-size: 44px;
+  font-weight: 800;
+  font-size: 42px;
   line-height: 60px;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
   color: #21243d;
-  margin: 0;
+  margin: 16px 0px;
 }
 
 .hero p {
@@ -95,13 +95,13 @@
   font-family: 'Heebo', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0;
+  line-height: 1.4;
   color: #21243d;
   text-align: justify;
 }
 
 .hero__button {
+  margin-top: 24px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -130,13 +130,13 @@
   padding: 56px 64px;
   min-height: 396px;
   background: #edf7fa;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 .blog h2,
 .projects h2 {
   font-family: 'Heebo', sans-serif;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 22px;
   letter-spacing: 0;
   color: #21243d;
@@ -182,20 +182,20 @@
 .blog-card h3 {
   margin: 0 0 10px;
   font-size: 1.5rem;
-  color: #101828;
+  color: #21243d;
 }
 
 .blog-card__meta {
   margin: 0 0 12px;
   font-size: 0.875rem;
-  color: #64748b;
+  color: #21243d;
   display: flex;
   gap: 40px;
 }
 
 .blog-card p {
   margin: 0;
-  color: #475569;
+  color: #21243d;
   text-align: justify;
 }
 
@@ -241,7 +241,7 @@
 
 .project-card {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 246px 1fr;
   gap: 32px;
   align-items: flex-start;
   padding-bottom: 32px;
@@ -253,9 +253,10 @@
   padding: 0;
   background: none;
   display: block;
-  border-radius: 16px;
+  border-radius: 6px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  width: 246px;
+  height: 184px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -275,24 +276,25 @@
 .project-card__content h3 {
   margin: 0 0 8px;
   font-size: 1.6rem;
-  color: #111827;
+  color: #21243d;
 }
 
 .project-card__content p {
   margin: 0;
-  color: #5f6c7b;
+  color: #21243d;
   max-width: 520px;
   text-align: justify;
 }
 
 .footer {
-  margin-top: 72px;
-  padding: 64px 0 32px;
+  margin-top: 64px;
+  margin-bottom: -100px;
+  padding: 48px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  color: #19213c;
+  color: #21243d;
   font-size: 0.95rem;
 }
 
@@ -521,8 +523,8 @@
   }
 
   .footer {
-    margin-top: 48px;
-    padding: 48px 0 24px;
+    margin-top: 32px;
+    padding: 32px 0 20px;
   }
 
   .footer__icons {
