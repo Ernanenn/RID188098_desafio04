@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import './App.css'
 import apiTestSuiteImg from './assets/apitest.jpeg'
 import pontoEletronicoImg from './assets/pontosis.jpeg'
+import showsabImg from './assets/showsab.jpeg'
 
 const blogPosts = [
   {
@@ -61,12 +62,11 @@ const projects = [
   },
   {
     id: 3,
-    title: '36 Days of Malayalam type',
-    thumbnail:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
+    title: 'Show do Semiárido',
+    thumbnail: showsabImg,
     description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
-    link: 'https://www.joao.dev',
+      'É um jogo de perguntas e respostas interativo e divertido sobre as tradições, história e curiosidades do semiárido brasileiro. Este quiz permite que os jogadores testem seus conhecimentos, compartilhem seus resultados e comparem suas pontuações com outros jogadores.',
+    link: 'https://show-do-semiarido.netlify.app/',
   },
 ]
 
