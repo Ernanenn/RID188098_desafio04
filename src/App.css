@@ -13,14 +13,15 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 120px;
-  padding: 0 64px;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar__links {
   display: flex;
+  align-items: center;
   gap: 32px;
 }
 
@@ -35,8 +36,8 @@
   align-items: center;
   justify-content: center;
   height: 43px;
-  color: #21243d;
-  transition: color 0.2s ease;
+  color: var(--color-text-primary);
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar__links a:nth-child(1) {
@@ -52,12 +53,38 @@
 }
 
 .navbar__links a:hover {
-  color: #21243d;
+  color: var(--color-accent);
+}
+
+.navbar__theme-toggle {
+  border: none;
+  background: var(--color-card-bg);
+  color: var(--color-text-primary);
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 14px var(--color-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar__theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px var(--color-navbar-shadow);
+}
+
+.navbar__theme-toggle:focus-visible {
+  outline: 3px solid rgba(255, 100, 100, 0.4);
+  outline-offset: 4px;
 }
 
 .navbar--elevated {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  background-color: var(--color-card-bg);
+  box-shadow: 0 18px 30px var(--color-navbar-shadow);
   border-radius: 16px;
 }
 
@@ -73,7 +100,7 @@
   font-size: 0.875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #21243d;
+  color: var(--color-text-muted);
 }
 
 .hero h1 {
@@ -84,7 +111,7 @@
   font-size: 42px;
   line-height: 60px;
   letter-spacing: 0.02em;
-  color: #21243d;
+  color: var(--color-text-primary);
   margin: 16px 0px;
 }
 
@@ -96,7 +123,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
-  color: #21243d;
+  color: var(--color-text-secondary);
   text-align: justify;
 }
 
@@ -108,13 +135,13 @@
   width: 208px;
   height: 47px;
   text-align: center;
-  background: #ff6464;
+  background: var(--color-accent);
   border-radius: 2px;
   font-family: 'Heebo', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
-  color: #ffffff;
+  color: var(--color-button-text);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -129,8 +156,9 @@
   margin: 0 -64px;
   padding: 56px 64px;
   min-height: 396px;
-  background: #edf7fa;
+  background: var(--color-page-contrast);
   border-radius: 2px;
+  color: var(--color-text-primary);
 }
 
 .blog h2,
@@ -139,7 +167,7 @@
   font-weight: 400;
   font-size: 22px;
   letter-spacing: 0;
-  color: #21243d;
+  color: var(--color-text-primary);
   margin-top: -30px;
 }
 
@@ -170,10 +198,10 @@
   width: 100%;
   max-width: 418px;
   min-height: 295px;
-  background: #ffffff;
+  background: var(--color-card-bg);
   border-radius: 4px;
   padding: 32px;
-  box-shadow: 0 4px 10px rgba(187, 225, 250, 0.25);
+  box-shadow: 0 4px 10px var(--color-card-shadow);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -182,20 +210,20 @@
 .blog-card h3 {
   margin: 0 0 10px;
   font-size: 1.5rem;
-  color: #21243d;
+  color: var(--color-text-primary);
 }
 
 .blog-card__meta {
   margin: 0 0 12px;
   font-size: 0.875rem;
-  color: #21243d;
+  color: var(--color-text-muted);
   display: flex;
   gap: 40px;
 }
 
 .blog-card p {
   margin: 0;
-  color: #21243d;
+  color: var(--color-text-secondary);
   text-align: justify;
 }
 
@@ -225,13 +253,13 @@
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(37, 99, 235, 0.3);
+  background: var(--color-indicator);
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
 .blog__indicator.is-active {
-  background: #2563eb;
+  background: var(--color-indicator-active);
 }
 .projects__list {
   display: flex;
@@ -245,7 +273,7 @@
   gap: 32px;
   align-items: flex-start;
   padding-bottom: 32px;
-  border-bottom: 1px solid #e5e9f2;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .project-card__image {
@@ -276,12 +304,12 @@
 .project-card__content h3 {
   margin: 0 0 8px;
   font-size: 1.6rem;
-  color: #21243d;
+  color: var(--color-text-primary);
 }
 
 .project-card__content p {
   margin: 0;
-  color: #21243d;
+  color: var(--color-text-secondary);
   max-width: 520px;
   text-align: justify;
 }
@@ -294,7 +322,7 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  color: #21243d;
+  color: var(--color-text-primary);
   font-size: 0.95rem;
 }
 
@@ -307,28 +335,28 @@
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background-color: #1f2747;
+  background-color: var(--color-footer-icon-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .footer__icon svg {
   width: 20px;
   height: 20px;
-  fill: #ffffff;
+  fill: var(--color-button-text);
 }
 
 .footer__icon:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 10px 20px var(--color-footer-icon-shadow);
 }
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--color-modal-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +377,7 @@
 .modal__image {
   border-radius: 24px;
   overflow: hidden;
-  background: #0f172a;
+  background: var(--color-modal-surface);
 }
 
 .modal__image img {
@@ -366,8 +394,8 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #ff6464;
-  color: #ffffff;
+  background: var(--color-accent);
+  color: var(--color-button-text);
   font-size: 24px;
   cursor: pointer;
   display: flex;
@@ -432,12 +460,21 @@
   .blog {
     width: 100%;
     margin: 0;
-    padding: 40px;
+    padding: 40px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .blog__grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    justify-content: stretch;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .blog__grid.is-carousel {
+    grid-template-columns: 1fr;
   }
 
   .blog-card {
@@ -499,10 +536,18 @@
 
   .blog {
     padding: 28px 20px;
+    align-items: center;
+    text-align: center;
   }
 
   .blog__grid {
     gap: 24px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .blog__grid.is-carousel {
+    grid-template-columns: 1fr;
   }
 
   .blog-card {

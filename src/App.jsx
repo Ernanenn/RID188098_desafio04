@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BlogSection from './components/BlogSection'
@@ -7,6 +8,20 @@ import './App.css'
 import apiTestSuiteImg from './assets/apitest.jpeg'
 import pontoEletronicoImg from './assets/pontosis.jpeg'
 import showsabImg from './assets/showsab.jpeg'
+
+const THEME_STORAGE_KEY = 'portfolio-theme'
+
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return 'light'
+  const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
+  if (stored === 'light' || stored === 'dark') {
+    return stored
+  }
+  if (window.matchMedia) {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
+  return 'light'
+}
 
 const blogPosts = [
   {
@@ -54,26 +69,37 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Sistema de Ponto Eletrônico',
-    thumbnail: pontoEletronicoImg,
-    description:
-      'Sistema de registro de ponto eletrônico que permite aos usuários registrarem sua presença através de CPF e foto. O sistema registra a data, o horário e a foto tirada em um banco de dados.',
-    link: 'https://github.com/Ernanenn/eletronic_pointSystem',
-  },
-  {
-    id: 3,
     title: 'Show do Semiárido',
     thumbnail: showsabImg,
     description:
       'É um jogo de perguntas e respostas interativo e divertido sobre as tradições, história e curiosidades do semiárido brasileiro. Este quiz permite que os jogadores testem seus conhecimentos, compartilhem seus resultados e comparem suas pontuações com outros jogadores.',
     link: 'https://show-do-semiarido.netlify.app/',
   },
+  {
+    id: 3,
+    title: 'Sistema de Ponto Eletrônico',
+    thumbnail: pontoEletronicoImg,
+    description:
+      'Sistema de registro de ponto eletrônico que permite aos usuários registrarem sua presença através de CPF e foto. O sistema registra a data, o horário e a foto tirada em um banco de dados.',
+    link: 'https://github.com/Ernanenn/eletronic_pointSystem',
+  },
 ]
 
 function App() {
+  const [theme, setTheme] = useState(getInitialTheme)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+  }
+
   return (
     <div className="app">
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero />
         <BlogSection posts={blogPosts} />

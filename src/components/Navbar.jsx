@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({ theme = 'light', onToggleTheme }) => {
   const [isElevated, setIsElevated] = useState(false)
 
   useEffect(() => {
@@ -13,8 +13,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const nextTheme = theme === 'dark' ? 'claro' : 'escuro'
+
   return (
     <header className={`navbar${isElevated ? ' navbar--elevated' : ''}`}>
+      <button
+        type="button"
+        className="navbar__theme-toggle"
+        onClick={onToggleTheme}
+        aria-label={`Alternar para o tema ${nextTheme}`}
+      >
+        {theme === 'dark' ? '☀️' : '🌙'}
+      </button>
       <nav className="navbar__links">
         <a href="#projects">Projetos</a>
         <a href="#blog">Blog</a>
@@ -25,4 +35,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

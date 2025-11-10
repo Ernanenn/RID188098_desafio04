@@ -44,7 +44,7 @@ const socials = [
 ]
 
 const Footer = () => (
-  <footer className="footer">
+  <footer id="contact" className="footer">
     <div className="footer__icons">
       {socials.map((social) => (
         <a
